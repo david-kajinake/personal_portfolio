@@ -1,0 +1,80 @@
+/* --- Services Page Styling --- */
+
+/* The Grid Container */
+.services-grid {
+    display: grid;
+    /* Responsive columns: Fits as many 280px cards as possible */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+/* Individual Service Card */
+.service-card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures all cards in a row match the tallest one */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.15); /* Dark blue shadow */
+    border-color: var(--primary-pale);
+}
+
+/* Service Image Area */
+.service-card .card-image {
+    height: 160px; /* Fixed height for uniformity */
+    background-color: var(--primary-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.service-card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Zoom effect on image hover */
+.service-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* Service Content */
+.service-card .card-content {
+    padding: 25px;
+    text-align: center; /* Center align looks better for services */
+    flex-grow: 1; /* Pushes content to fill the card */
+}
+
+.service-card h3 {
+    color: var(--primary-dark);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-pale);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.service-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Mobile Tweak */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 column on very small phones */
+    }
+}

@@ -1,0 +1,80 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block css_link %}
+ <link rel="stylesheet" href="{% static 'portfolio/css/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="projects-page">
+    <h1 class="section-title">My Projects</h1>
+    
+    <div class="projects-grid">
+        {% for project in projects %}
+         <article class="project-card" >             <div class="card-image">
+                <img src="{{ project.image.url }}" alt="{{ project.name }}">
+             </div>
+             <div class="card-content">
+                <h3>{{ project.name }}</h3>
+                <p class="project-desc">
+                    {{ project.description }}
+                </p>
+                <div class="tech-tags">
+                    {% for technology in project.technologies.all %}
+                    <span>{{technology.name}}</span>
+                    {% endfor %}
+                </div>
+                <div class="card-actions">  
+                    <a href="{{ project.github_repo_link }}" target="_blank" class="btn-card">GitHub Repo</a>
+                    <a href="{{ project.live_Demo_link }}" target="_blank" class="btn-card outline">Live Demo</a>
+                </div>
+             </div>
+
+         </article>
+        {% endfor %}
+        
+        <article class="project-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/portfolio-website.jpg' %}" alt="Project One">
+            </div>
+            <div class="card-content">
+                <h3>Portfolio Website</h3>
+                <p class="project-desc">
+                    A responsive portfolio website built with Django and vanilla CSS. Features a dynamic project gallery and contact form.
+                </p>
+                <div class="tech-tags">
+                    <span>Django</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                </div>
+                <div class="card-actions">
+                    <a href="https://github.com/yourusername/repo" target="_blank" class="btn-card">GitHub Repo</a>
+                    <a href="#" target="_blank" class="btn-card outline">Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/ecommerce.png' %}" alt="Project Two">
+            </div>
+            <div class="card-content">
+                <h3>E-Commerce Store</h3>
+                <p class="project-desc">
+                    Full-stack shopping platform with Stripe payment integration, cart functionality, and user authentication.
+                </p>
+                <div class="tech-tags">
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>Stripe API</span>
+                </div>
+                <div class="card-actions">
+                    <a href="#" target="_blank" class="btn-card">GitHub Repo</a>
+                    <a href="#" target="_blank" class="btn-card outline">Live Demo</a>
+                </div>
+            </div>
+        </article>
+
+        </div>
+</section>
+{% endblock %}

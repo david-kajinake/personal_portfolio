@@ -1,0 +1,102 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block css_link %}
+    <link rel="stylesheet" href="{% static 'portfolio/css/services.css' %}?v={{ css_version }}">
+{% endblock %}
+{% block content %}
+<section class="services-page">
+    <h1 class="section-title">My Services</h1>
+    
+    <div class="services-grid">
+        
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/back-end-development-image.png' %}" alt="Back-end Development">
+            </div>
+            <div class="card-content">
+                <h3>Back-End Development</h3>
+                <p class="service-desc">
+                    Robust server-side logic using Python (Django/Flask). I build secure APIs, manage databases, and ensure your application runs smoothly behind the scenes.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/front-end-development-image.png' %}" alt="Front-end Development">
+            </div>
+            <div class="card-content">
+                <h3>Front-End Development</h3>
+                <p class="service-desc">
+                    Responsive and interactive user interfaces using HTML5, CSS3, and JavaScript. I turn designs into pixel-perfect, mobile-friendly websites.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/network-engineering-image.png' %}" alt="Network Engineering">
+            </div>
+            <div class="card-content">
+                <h3>Network Engineering</h3>
+                <p class="service-desc">
+                    Complete network solutions including design, implementation, and maintenance. I ensure your infrastructure is secure, fast, and reliable.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/it-desktop-support-image.png' %}" alt="IT Desktop Support">
+            </div>
+            <div class="card-content">
+                <h3>IT Desktop Support</h3>
+                <p class="service-desc">
+                    Troubleshooting hardware and software issues. I provide technical assistance to keep your team productive and your systems operational.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/system-administration-image.png' %}" alt="System Administration">
+            </div>
+            <div class="card-content">
+                <h3>System Administration</h3>
+                <p class="service-desc">
+                    Windows Server management, active directory configuration, and server security hardening to maintain 99.9% uptime.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/business-ai-integration-image.png' %}" alt="Business AI Integration">
+            </div>
+            <div class="card-content">
+                <h3>Business-AI Integration</h3>
+                <p class="service-desc">
+                    Leveraging Artificial Intelligence to automate workflows, analyze business data, and optimize decision-making processes.
+                </p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="card-image">
+                <img src="{% static 'portfolio/images/iot-image.png' %}" alt="Internet of Things">
+            </div>
+            <div class="card-content">
+                <h3>IoT Solutions</h3>
+                <p class="service-desc">
+                    Connecting physical devices to the digital world. I design smart systems for monitoring, automation, and data collection.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+{% endblock %}
+{% block js_link %}
+    {{ block.super }}
+    <script type="module" src="{% static 'portfolio/js/services.js' %}?v={{ js_version }}"></script>
+{% endblock %}

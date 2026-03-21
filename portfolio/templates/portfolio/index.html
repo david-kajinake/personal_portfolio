@@ -1,0 +1,38 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block css_link %}
+ <link rel="stylesheet" href="{% static 'portfolio/css/index.css' %}?v={{ css_version }}">
+{% endblock %}
+{% block content %}
+
+<section class="hero-section">
+    <div class="hero-text">
+        <h3 class="greeting">Hello World, I am</h3>
+        <h1 class="name">David Kajinake</h1>
+        <h2 class="role">Full-Stack Developer</h2>
+        <p class="description">
+            I craft responsive websites and robust web applications. 
+            Passionate about clean code, user-centric design, and 
+            bringing creative ideas to life on the web.
+        </p>
+        
+        <div class="cta-buttons">
+            <a id="view-work-anchor" class="btn btn-primary" name = "projects" >View My Work</a>
+            
+            <a id="contact-me-anchor" class="btn btn-secondary" name = "contact" >Contact Me</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="{% static 'portfolio/images/david-kajinake-passport-photo.jpg' %}" alt="David Kajinake">
+    </div>
+</section>
+
+
+
+
+{% endblock %}
+{% block js_link %}
+{{ block.super }}
+ <script type="module" src="{% static 'portfolio/js/index.js' %}?v={{ js_version }}"></script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kajinake</title>
+    <link rel="stylesheet" href="{% static 'portfolio/css/base.css' %}?v={{ css_version }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=call" />
+    {% block css_link %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-left">
+                <div class="title">
+                     David <span>Kajinake</span>
+                </div>
+            </div>
+            <div class="header-center">
+
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li><a id="home-anchor" >Home</a></li>
+                    <li><a id = "services-anchor" >Services</a></li>
+                    <li><a id ="projects-anchor" >Projects</a></li>
+                   <!--  <li><a id="resume-anchor" >Resume</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="page-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </main>
+    <footer>
+        <div class="social">
+            <p>Socials</p>
+            <ul>
+                <li><a href="https://web.facebook.com/profile.php?id=61585217792566" >Facebook</a></li>
+                <li><a href="https://www.instagram.com/david_kajinake/" target="_blank" >Instagram</a></li>
+            </ul>
+        </div>
+        <div class="quick-links">
+            <p>Quick Links</p>
+            <ul>
+                <li id="projects-item" >Projects</li>
+                <li id="faqs-item" >FAQs</li>
+            </ul>
+        </div>
+        <div class="contacts">
+            <p>Contacts</p>
+            <ul>
+                <li>+254706073832</li>
+                <li> <a target="_blank" href="mailto:davidkajinake@gmail.com">davidkajinake@gmail.com</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="{% static 'portfolio/js/base.js' %}?v={{ js_version }}"></script>
+    {% block js_link %}
+    {% endblock %}
+</body>
+</html> 

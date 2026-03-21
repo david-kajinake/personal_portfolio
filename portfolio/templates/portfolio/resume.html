@@ -1,0 +1,40 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block css_link %}
+ <link rel="stylesheet" href="{% static 'portfolio/css/resume.css' %}?v={{ css_version }}">
+{% endblock %}
+{% block content %}
+
+<div class="resume-wrapper">
+    <header class="resume-header">
+        <h1 class="graphic-title">Curriculum Vitae</h1>
+        <div class="accent-bar"></div>
+    </header>
+
+    <div class="resume-card">
+        <object 
+            data="{% static 'portfolio/docs/david-resume.pdf.pdf' %}" 
+            type="application/pdf" 
+            class="pdf-display">
+            
+            <div class="fallback-message">
+                <p>It looks like your browser doesn't support embedded PDFs.</p>
+                <a href="{% static 'portfolio/docs/david-resume.pdf.pdf' %}" class="btn-primary">View Resume Directly</a>
+            </div>
+        </object>
+
+        <footer class="resume-footer">
+            <a href="{% static 'portfolio/docs/david-resume.pdf.pdf' %}" download class="download-link">
+                <span class="icon">↓</span> Download PDF Version
+            </a>
+        </footer>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block js_link %}
+    <script type="module" src="{% static 'portfolio/js/resume.js' %}?v={{ js_version }}"></script>
+{% endblock %} 
+
+
