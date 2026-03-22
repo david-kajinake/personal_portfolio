@@ -10,12 +10,7 @@ curr_dir = os.getcwd()
 print(curr_dir)
 # Create your views here.
 def home(request):
-    phone_number = MyPhoneNumber.objects.all().first()
-    email_address = MyEmail.objects.all().first()
-    return render(request , "portfolio/index.html",{
-        "phone_number": phone_number ,
-        "email_address": email_address  
-    })
+    return render(request , "portfolio/index.html")
 
 def services(request):
     services = Service.objects.all()
