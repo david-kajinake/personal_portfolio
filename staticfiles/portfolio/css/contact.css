@@ -1,0 +1,129 @@
+/* --- Contact Page Styling --- */
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Stacks on small screens */
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Left Panel: Info */
+.contact-info-panel {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.contact-info-panel h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-pale);
+}
+
+.contact-intro {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.info-label {
+    display: block;
+    font-weight: bold;
+    color: var(--primary-pale);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.info-link {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.info-link:hover {
+    color: var(--primary-pale);
+    text-decoration: underline;
+}
+
+.info-text {
+    font-size: 1.1rem;
+}
+
+/* Right Panel: Form */
+.contact-form-panel {
+    flex: 1.5; /* Takes up slightly more space than info panel */
+    min-width: 300px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: inherit; /* Inherits Orbitron/Sans-serif */
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-dark);
+    outline: none;
+    background-color: var(--primary-pale);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #002244;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stack vertically */
+    }
+    
+    .contact-info-panel, 
+    .contact-form-panel {
+        width: 100%;
+    }
+}

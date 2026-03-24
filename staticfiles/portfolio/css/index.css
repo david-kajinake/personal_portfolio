@@ -1,0 +1,122 @@
+/* --- Hero Section Styling --- */
+.hero-section {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 70vh; /* Takes up 70% of the viewport height */
+    padding: 20px 0;
+}
+
+/* Text Content */
+.hero-text {
+    flex: 1; /* Takes up 50% width */
+    max-width: 600px;
+}
+
+.greeting {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 3rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.role {
+    font-size: 1.8rem;
+    color: var(--primary-dark); /* Dark Blue */
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 480px;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 9px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border: 2px solid var(--primary-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--white);
+    color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-dark);
+    border: 2px solid var(--primary-dark);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-pale);
+}
+
+/* Image Styling */
+.hero-image {
+    flex: 1; /* Takes up 50% width */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover; /* Ensures photo doesn't stretch */
+    border-radius: 50%; /* Makes it circular */
+    border: 8px solid var(--primary-pale); /* Pale blue border */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* --- Hero Responsiveness --- */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Puts image on top on mobile */
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-text {
+        margin-top: 20px;
+    }
+
+    .description {
+        margin: 0 auto 30px auto; /* Centers the paragraph */
+    }
+
+    .cta-buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .name {
+        font-size: 2.2rem;
+    }
+}
